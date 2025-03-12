@@ -1,0 +1,38 @@
+
+#type: args
+
+train:
+  device: "cuda"
+  num_works: 3
+  epochs: 400
+  batch_size: 72
+  lr: 1.0e-3
+
+diffusion:
+  layers: 4 
+  channels: 64
+  nheads: 4
+  diffusion_embedding_dim: 128
+  beta_start: 0.0001
+  beta_end: 0.2
+  num_steps: 50
+  schedule: "quad"
+  nsample: 5
+  sample_interval: 200
+
+model:
+  is_unconditional: 0
+  timeemb: 128
+  featureemb: 16
+  target_strategy: "random_mid_wp"
+  input_size: 26
+  eval_length: 180
+  pred_length: 30
+  random_mask_percent: 0.3
+  obs_mask_rank: 0.5
+
+files:
+  gt_folder: 
+  self_mask_folder: 
+  gt_test_folder: 
+  self_mask_test_folder: 
